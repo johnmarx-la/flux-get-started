@@ -26,13 +26,13 @@ metadata:
   name: ingress-nginx
   namespace: marx
 spec:
+spec:
   type: LoadBalancer
+  externalIPs:
+  - 54.236.57.197
   selector:
     app: my-nginx
   ports:
     - name: http
       port: 80
-      targetPort: http
-    - name: https
-      port: 443
-      targetPort: https
+      targetPort: 80

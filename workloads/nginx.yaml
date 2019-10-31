@@ -23,13 +23,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-nginx
+  name: my-nginx-service
   namespace: marx
-  labels:
-    run: my-nginx
 spec:
-  ports:
-  - port: 80
-    protocol: TCP
+  type: NodePort
   selector:
-    run: my-nginx
+    app: my-nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

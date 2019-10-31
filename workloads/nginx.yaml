@@ -27,12 +27,13 @@ metadata:
   namespace: marx
 spec:
 spec:
-  type: LoadBalancer
+  type: NodePort
   externalIPs:
   - 54.236.57.197
   selector:
     app: my-nginx
   ports:
     - name: http
+      nodePort: 80
       port: 80
       targetPort: 80

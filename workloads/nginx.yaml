@@ -20,20 +20,16 @@ spec:
         - containerPort: 80
 
 ---
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: ingress-nginx
-  namespace: marx
+ name: lb-nginx
+ namespace: marx
 spec:
-spec:
-  type: LoadBalancer
-  externalIPs:
-  - 54.236.57.197
-  selector:
-    app: my-nginx
-  ports:
-    - name: http
-      nodePort: 80
-      port: 80
-      targetPort: 80
+ type: LoadBalancer
+ selector:
+   app: my-nginx
+ ports:
+  - protocol: TCP
+    port: 80
+ loadBalancerIP: 54.236.57.197

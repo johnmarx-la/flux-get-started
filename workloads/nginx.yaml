@@ -27,7 +27,7 @@ metadata:
   namespace: marx
 spec:
 spec:
-  type: NodePort
+  type: LoadBalancer
   externalIPs:
   - 54.236.57.197
   selector:
